@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&display=swap");
+
+html,
+body {
+    font-family: "Heebo", sans-serif !important;
+}
+
+@for $i from 1 to 8 {
+    $weight: $i * 100;
+    .fw-#{$weight} {
+        font-weight: $weight;
+    }
+}

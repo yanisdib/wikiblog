@@ -1,0 +1,33 @@
+@import "~bootstrap/scss/bootstrap";
+@import "./_fonts";
+
+a {
+    color: #0000cd;
+    &:hover {
+        color: #0000cd;
+    }
+    &:active {
+        color: #609;
+    }
+}
+
+nav {
+    a {
+        color: #0c0c0c;
+        font-weight: 400;
+        &:hover {
+            color: #000000;
+        }
+        &:active {
+            color: #0000cd;
+        }
+    }
+}
+
+.alt-title {
+    font-family: "Playfair Display", sans-serif;
+}
+
+.content {
+    white-space: pre-wrap;
+}

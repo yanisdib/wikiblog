@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function Dashboard() {
     return (
         <div>
-            <h3>Dashboard</h3>
+            <h2>Dashboard</h2>
             <Link to="/dashboard/articles">Articles</Link>
         </div>
     );

@@ -1,18 +1,21 @@
 import React from 'react';
 import ArticleForm from './ArticleForm';
 import { connect } from 'react-redux';
-import { editArticle } from '../../../../actions/articles';
+import { startEditArticle } from '../../../../actions/articles';
 
-function EditArticle(props) {
-    return (
-        <ArticleForm
-            article={props.article}
-            onSubmit={(article) => {
-                props.dispatch(editArticle(props.article.id, article));
-                props.history.push('/dashboard/articles');
-            }}
-        />
-    );
+export class EditArticle extends React.Component {
+    onSubmit = (article) => {
+        this.props.startEditArticle(this.props.article.id, article);
+        this.props.history.push('/dashboard/articles');
+    };
+    render() {
+        return (
+            <ArticleForm
+                article={this.props.article}
+                onSubmit={this.onSubmit}
+            />
+        );
+    };
 };
 
 const mapStateToProps = (state, props) => {
@@ -21,4 +24,8 @@ const mapStateToProps = (state, props) => {
     };
 };
 
-export default connect(mapStateToProps)(EditArticle);
+const mapDispatchToProps = (dispatch, props) => ({
+    startEditArticle: (id, article) => dispatch(startEditArticle(id, article))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(EditArticle);

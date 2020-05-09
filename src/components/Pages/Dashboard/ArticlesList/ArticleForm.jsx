@@ -1,5 +1,6 @@
 import React from 'react';
 import moment from 'moment';
+import { v1 as uuidv1 } from 'uuid';
 
 export class ArticleForm extends React.Component {
     constructor(props) {
@@ -8,6 +9,7 @@ export class ArticleForm extends React.Component {
             title: props.article ? props.article.title : '',
             subtitle: props.article ? props.article.subtitle : '',
             description: props.article ? props.article.description : '',
+            permalink: props.article ? props.article.permalink : '',
             createdAt: props.article ? moment(props.article.createdAt) : moment()
         };
     };
@@ -40,12 +42,16 @@ export class ArticleForm extends React.Component {
                 error: '',
                 status: 'Article successfully published!'
             }));
-            this.props.onSubmit({
-                title: this.state.title,
-                subtitle: this.state.subtitle,
-                description: this.state.description,
-                createdAt: this.state.createdAt.valueOf()
-            });
+            // Create a permalink based on article's title, subtitle and a uuid.
+            const permalink = this.state.title.concat('-', this.state.subtitle, '-', uuidv1().substring(0,6));  
+            this.props.onSubmit(
+                {
+                    title: this.state.title,
+                    subtitle: this.state.subtitle,
+                    description: this.state.description,
+                    permalink: permalink.replace(/\s+/g, '-').toLowerCase(),
+                    createdAt: this.state.createdAt.valueOf()
+                });
             console.log('Submitted');
         };
     };

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { startAddArticle } from '../../../../actions/articles';
-import ArticleForm from './ArticleForm';
+import ArticlesForm from './ArticlesForm/ArticlesForm';
 
 export class AddArticle extends React.Component {
     onSubmit = (article) => {
@@ -13,13 +13,13 @@ export class AddArticle extends React.Component {
         return (
             <div>
                 <h4>Create an article</h4>
-                <ArticleForm onSubmit={this.onSubmit} />
+                <ArticlesForm onSubmit={this.onSubmit} />
             </div>
         );
     }
 };
 
-const mapDispatchToProps = (dispatch, props) => ({
+const mapDispatchToProps = (dispatch) => ({
     startAddArticle: (article) => dispatch(startAddArticle(article))
 });
 

@@ -18,10 +18,12 @@ export const startAddArticle = (articleData = {}) => {
             title = '',
             subtitle = '',
             description = '',
+            category = '',
             permalink = '',
+            imageUrl = '',
             createdAt = 0
         } = articleData;
-        const article = { title, subtitle, description, permalink, createdAt };
+        const article = { title, subtitle, description, category, permalink, imageUrl, createdAt };
         return database.ref('articles').push(article).then((ref) => {
             dispatch(addArticle({
                 id: ref.key,

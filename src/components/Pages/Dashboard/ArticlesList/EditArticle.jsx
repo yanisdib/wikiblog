@@ -1,5 +1,5 @@
 import React from 'react';
-import ArticleForm from './ArticleForm';
+import ArticlesForm from './ArticlesForm/ArticlesForm';
 import { connect } from 'react-redux';
 import { startEditArticle } from '../../../../actions/articles';
 
@@ -9,8 +9,9 @@ export class EditArticle extends React.Component {
         this.props.history.push('/dashboard/articles');
     };
     render() {
+        console.log(this.props.article)
         return (
-            <ArticleForm
+            <ArticlesForm
                 article={this.props.article}
                 onSubmit={this.onSubmit}
             />

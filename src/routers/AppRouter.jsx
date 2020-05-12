@@ -9,6 +9,7 @@ import NotFound from '../components/Pages/NotFound/NotFound';
 import EditArticle from '../components/Pages/Dashboard/ArticlesList/EditArticle';
 import ArticlesList from '../components/Pages/Dashboard/ArticlesList/ArticlesList';
 import ArticlesView from '../components/Pages/Home/Articles/ArticlesView/ArticlesView';
+import Footer from '../components/Footer/Footer';
 
 export const history = createHistory();
 
@@ -27,6 +28,7 @@ function AppRouter() {
                     <Route path="/404" component={NotFound} />
                 </Switch>
             </main>
+            <Footer />
         </Router>
     );
 };

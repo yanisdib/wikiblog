@@ -1,5 +1,5 @@
 import React from 'react';
-import FeaturedArticlesList from './FeaturedArticles/FeaturedArticlesList';
+import FeaturedArticlesList from './FeaturedArticles/FeaturedArticles';
 
 function Articles() {
     return (

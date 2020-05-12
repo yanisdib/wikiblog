@@ -1,0 +1,30 @@
+.featured-articles {
+    height: 700px;
+    .featured-article-item-0 {
+        color: #fff;
+        padding: 30px;
+        a {
+            color: inherit;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    .feat-article-bg {
+        background-color: rgb(204, 204, 204);
+    }
+
+    @for $i from 1 to 3 {
+        .featured-article-item-#{$i} {
+            background-color: #fff;
+            padding: 15px 20px 15px 15px;
+            a {
+                color: #000;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

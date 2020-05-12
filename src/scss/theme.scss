@@ -1,5 +1,13 @@
+// @@ Imports
 @import "~bootstrap/scss/bootstrap";
 @import "./_fonts";
+@import "./_views";
+@import "./_home";
+
+html,
+body {
+    height: 100%;
+}
 
 a {
     color: #0000cd;
@@ -24,10 +32,7 @@ nav {
     }
 }
 
-.alt-title {
+.alt-title,
+.quote {
     font-family: "Playfair Display", sans-serif;
-}
-
-.content {
-    white-space: pre-wrap;
 }

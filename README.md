@@ -14,6 +14,7 @@
 
 ## **Incoming improvements and features**
 
+#### Refactor code to integrate usage of hooks
 #### Integration of a rich text editor
 #### Integration of user's own personal picture gallery
 #### Integration of user roles

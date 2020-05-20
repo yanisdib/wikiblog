@@ -4,12 +4,12 @@
 ## **Features**
 
 
-[x] Add, edit, remove articles and other contents
-[ ] Add, edit, remove drafts
-[ ] Add, edit, remove comments to articles
-[ ] Authentication with Google
-[ ] Filter and sort contents
-[ ] Basic articles search feature
+- [x] Add, edit, remove articles and other contents
+- [ ] Add, edit, remove drafts
+- [ ] Add, edit, remove comments to articles
+- [ ] Authentication with Google
+- [ ] Filter and sort contents
+- [ ] Basic articles search feature
 
 
 ## **Incoming improvements and features**

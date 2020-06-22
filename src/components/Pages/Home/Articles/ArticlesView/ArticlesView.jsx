@@ -1,10 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import ArticlesComments from './ArticlesComments/ArticlesComments';
 
 export function ArticlesView(props) {
-    console.log(props);
-    console.log(props.article);
     const backgroundStyle = {
         backgroundImage: `url(${props.article.imageUrl})`,
         backgroundPosition: 'center',
@@ -20,13 +18,15 @@ export function ArticlesView(props) {
                 <div className="row">
                     <div className="col-3 author-margin">
                         <p className="author fw-500">
-                            Published by <Link>Yanis Dib</Link>
+                            Published by <a href="#">Yanis Dib</a>
                         </p>
                     </div>
                     <div className="col-7">
                         <p className='content'>{props.article.description}</p>
                     </div>
                 </div>
+                <h1 className="fw-700 mt-5">Commentaires</h1>
+                <ArticlesComments history={props.history} {...props.article} />
             </div>
         </section>
     );

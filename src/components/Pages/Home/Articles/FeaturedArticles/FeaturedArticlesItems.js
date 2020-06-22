@@ -66,7 +66,6 @@ function FeaturedArticlesListItems({ i, title, subtitle, description, category, 
         };
     };
 
-    console.log(i)
     return (
         renderFeaturedArticle(i)
     );

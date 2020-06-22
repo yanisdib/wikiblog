@@ -104,7 +104,7 @@ export class ArticleForm extends React.Component {
                         .replace(puncRegex, '')
                         .toLowerCase(),
                     imageUrl: this.state.imageUrl,
-                    createdAt: this.state.createdAt.valueOf(),
+                    createdAt: this.state.createdAt.valueOf()
                 });
             console.log('Submitted');
             console.log(this.state.imageUrl)

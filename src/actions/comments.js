@@ -47,3 +47,28 @@ export const getComments = (comments) => ({
     type: 'GET_COMMENTS',
     comments
 });
+
+/** 
+ * Fetches and pushes every article ordered by date of creation
+ * at the given reference in the database one time into an empty array.
+ * A promise is then triggered and dispatches our data to update the state
+ * calling the function getArticles.
+ */
+export const startGetComments = (idArticle) => {
+    return (dispatch, getState) => {
+        return database.ref(`articles/${idArticle}/comments`)
+            .once('value').then((snapshot) => {
+                const comments = [];
+
+                snapshot.forEach((childSnapshot) => {
+                    comments.push({
+                        id: childSnapshot.key,
+                        ...childSnapshot.val()
+                    });
+                });
+
+                dispatch(getComments(comments));
+                console.log(comments);
+            });
+    };
+};

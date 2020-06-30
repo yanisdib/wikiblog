@@ -10,10 +10,11 @@ export class ArticleForm extends React.Component {
         this.state = {
             title: props.article ? props.article.title : '',
             subtitle: props.article ? props.article.subtitle : '',
-            category: props.article ? props.article.category : '',
+            category: props.article ? props.article.category : 'Chronique',
             description: props.article ? props.article.description : '',
             imageFile: '',
             imageUrl: props.article ? props.article.imageUrl : '',
+            isFeatured: props.article ? props.article.isFeatured : false,
             uploadStatus: '',
             permalink: props.article ? props.article.permalink : '',
             createdAt: props.article ? moment(props.article.createdAt) : moment()
@@ -44,6 +45,10 @@ export class ArticleForm extends React.Component {
     onImageFileChange = (e) => {
         const imageFile = e.target.files[0];
         this.setState(() => ({ imageFile }));
+    };
+
+    onIsFeaturedChange = () => {
+        this.setState(() => ({ isFeatured: !this.state.isFeatured }));
     };
 
     onFirebaseUpload = (e) => {
@@ -104,6 +109,7 @@ export class ArticleForm extends React.Component {
                         .replace(puncRegex, '')
                         .toLowerCase(),
                     imageUrl: this.state.imageUrl,
+                    isFeatured: this.state.isFeatured,
                     createdAt: this.state.createdAt.valueOf()
                 });
             console.log('Submitted');
@@ -112,16 +118,11 @@ export class ArticleForm extends React.Component {
     };
 
     render() {
+        console.log(this.state.isFeatured);
         return (
             <div className="row w-100">
                 <div className="col-6 m-auto">
                     {this.state.error && <p className="text-danger">{this.state.error}</p>}
-                    <ImagesUploader
-                        onChange={this.onImageFileChange}
-                        onSubmit={this.onFirebaseUpload}
-                        imageUrl={this.state.imageUrl}
-                        uploadStatus={this.state.uploadStatus}
-                    />
                     <form onSubmit={this.onSubmit}>
                         <div className="form-group">
                             <label className="fw-500">Title: </label>
@@ -165,12 +166,20 @@ export class ArticleForm extends React.Component {
                                 required={true}
                             >
                                 <option value="Chronique">Chronique</option>
-                                <option value="Review">Review</option>
+                                <option value="Analyse">Analyse</option>
                                 <option value="Podcast">Podcast</option>
                                 <option value="Wiki">Wiki</option>
                                 <option value="News">Actualité</option>
                                 <option value="Interview">Interview</option>
                             </select>
+                            <div className="form-group">
+                                <label>Publish as Featured Article: &nbsp;</label>
+                                <input
+                                    type="checkbox"
+                                    onChange={this.onIsFeaturedChange}
+                                    checked={this.state.isFeatured}
+                                />
+                            </div>
                         </div>
                         <div className="form-group">
                             <button type="submit" className="btn btn-primary">
@@ -180,6 +189,12 @@ export class ArticleForm extends React.Component {
                             {this.state.status && <p>{this.state.status}</p>}
                         </div>
                     </form>
+                    <ImagesUploader
+                        onChange={this.onImageFileChange}
+                        onSubmit={this.onFirebaseUpload}
+                        imageUrl={this.state.imageUrl}
+                        uploadStatus={this.state.uploadStatus}
+                    />
                 </div>
             </div>
         );

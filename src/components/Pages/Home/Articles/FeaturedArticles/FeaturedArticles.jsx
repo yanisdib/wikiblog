@@ -11,13 +11,14 @@ export function FeaturedArticlesList(props) {
                     <div className="row h-100">
                         <div className="col-4 h-100">
                             {props.articles.map((article, i) => {
-                                return i === 1 || i === 2 ? (
+                                return i > 0 ? (
                                     <FeaturedArticlesListItems key={article.id} i={i} {...article} />
                                 ) : (null);
                             })}
                         </div>
                         <div className="col-8 h-100">
                             {props.articles.map((article, i) => {
+                                console.log(i);
                                 return i === 0 ? (
                                     <FeaturedArticlesListItems key={article.id} i={i} {...article} />
                                 ) : (null);
@@ -25,10 +26,7 @@ export function FeaturedArticlesList(props) {
                         </div>
                     </div>
                 ) : (<p>No articles...</p>)
-
             }
-
-
         </div>
     );
 };

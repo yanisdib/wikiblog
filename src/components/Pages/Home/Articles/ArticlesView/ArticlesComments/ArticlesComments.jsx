@@ -3,6 +3,7 @@ import { startAddComment } from '../../../../../../actions/comments';
 import ArticlesCommentsForm from './ArticlesCommentsForm/ArticlesCommentsForm';
 import { connect } from 'react-redux';
 
+
 export class ArticlesComments extends React.Component {
     onSubmit = (comment) => {
         const idArticle = this.props.id;
@@ -12,6 +13,7 @@ export class ArticlesComments extends React.Component {
 
     render() {
         const comments = this.props.comments;
+        console.log(comments);
         return (
             <div id="comments">
                 <div id="comments-wrapper">
@@ -29,6 +31,22 @@ export class ArticlesComments extends React.Component {
                                 );
                             }))
                     }
+
+                    {/* {
+                        !comments ? (<div>No comments yet...</div>) : (
+                            comments.map((comment, i) => {
+                                console.log(comment);
+                                return (
+                                    <div key={comment.id} className={`comments-item comments-item-${i}`}>
+                                        <div className="comments-title fw-600">{comment.title}</div>
+                                        <div className="comments-body fw-300">{comment.body}</div>
+                                        <div className="comments-username fw-500">
+                                            Ecrit par {comment.username}
+                                        </div>
+                                    </div>
+                                );
+                            }))
+                    } */}
                 </div>
                 <h4 className="fw-600 mb-3 mt-5">Laisser un commentaire</h4>
                 <ArticlesCommentsForm onSubmit={this.onSubmit} />
@@ -37,9 +55,12 @@ export class ArticlesComments extends React.Component {
     };
 };
 
+
+
 const mapDispatchToProps = (dispatch) => ({
     startAddComment: (idArticle, comment) => dispatch(startAddComment(idArticle, comment)),
     // startGetComments: (idArticle) => dispatch(startGetComments(idArticle))
-})
+});
+
 
 export default connect(undefined, mapDispatchToProps)(ArticlesComments);

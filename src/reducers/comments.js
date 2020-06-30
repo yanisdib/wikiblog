@@ -21,6 +21,8 @@ export default (state = commentsReducerDefaultState, action) => {
             });
         case 'REMOVE_COMMENT':
             return state.filter(({ id }) => id !== action.id);
+        case 'GET_COMMENTS':
+            return action.comments;
         default:
             return state;
     }

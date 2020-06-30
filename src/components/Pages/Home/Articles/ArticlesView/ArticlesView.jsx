@@ -1,14 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import getComments from '../../../../../selectors/comments';
 import ArticlesComments from './ArticlesComments/ArticlesComments';
 
 export function ArticlesView(props) {
+
     const backgroundStyle = {
         backgroundImage: `url(${props.article.imageUrl})`,
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat'
     };
+
     return (
         <section id="view">
             <div className="article-cover" style={backgroundStyle} />
@@ -18,7 +21,7 @@ export function ArticlesView(props) {
                 <div className="row">
                     <div className="col-3 author-margin">
                         <p className="author fw-500">
-                            Published by <a href="#">Yanis Dib</a>
+                            Published by <a href="#author">Yanis Dib</a>
                         </p>
                     </div>
                     <div className="col-7">
@@ -26,7 +29,7 @@ export function ArticlesView(props) {
                     </div>
                 </div>
                 <h1 className="fw-700 mt-5">Commentaires</h1>
-                <ArticlesComments history={props.history} {...props.article} />
+                <ArticlesComments history={props.history} {...props.article} comments={props.article.comments} />
             </div>
         </section>
     );

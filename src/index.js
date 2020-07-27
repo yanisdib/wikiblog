@@ -7,7 +7,6 @@ import { Provider } from 'react-redux';
 import configureStore from './store/configureStore';
 import { startGetArticles } from './actions/articles';
 
-
 const store = configureStore();
 store.dispatch(startGetArticles()).then(() => {
   ReactDOM.render(
@@ -16,7 +15,6 @@ store.dispatch(startGetArticles()).then(() => {
     </Provider>,
     document.getElementById('root')
   );
-
 });
 
 // If you want your app to work offline and load faster, you can change

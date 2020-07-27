@@ -55,7 +55,7 @@ export const getComments = (comments) => ({
  * calling the function getArticles.
  */
 export const startGetComments = (idArticle) => {
-    return (dispatch, getState) => {
+    return (dispatch) => {
         return database.ref(`articles/${idArticle}/comments`)
             .once('value').then((snapshot) => {
                 const comments = [];

@@ -1,6 +1,8 @@
 // @@ Imports
 @import "~bootstrap/scss/bootstrap";
 @import "./_fonts";
+@import "../components/Header/_header";
+@import "../components/Footer/_footer";
 @import "./_comments";
 @import "./_views";
 @import "./_home";

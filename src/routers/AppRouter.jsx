@@ -8,7 +8,7 @@ import Header from '../components/Header/Header';
 import NotFound from '../components/Pages/NotFound/NotFound';
 import EditArticle from '../components/Pages/Dashboard/ArticlesList/EditArticle';
 import ArticlesList from '../components/Pages/Dashboard/ArticlesList/ArticlesList';
-import ArticlesView from '../components/Pages/Home/Articles/ArticlesView/ArticlesView';
+import ArticlesView from '../components/ArticlesView/ArticlesView';
 import Footer from '../components/Footer/Footer';
 
 export const history = createHistory();

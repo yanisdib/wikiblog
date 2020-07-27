@@ -1,3 +1,5 @@
-export default (comments) => {
-    return comments.map((comment) => { return comment });
+export default (comments = {}) => {
+    return (Object.keys(comments).map(function (key) {
+        return comments[key];
+    }));
 };

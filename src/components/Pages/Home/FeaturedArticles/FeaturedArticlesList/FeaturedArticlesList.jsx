@@ -1,16 +1,16 @@
 import React from 'react';
 import FeaturedArticlesListItems from './FeaturedArticlesItems';
-import getArticles from '../../../../../selectors/articles';
-import { connect } from 'react-redux';
 
 export function FeaturedArticlesList(props) {
+    const featuredArticle = props.articles.filter(article => article.category !== 'Podcast' && article.isFeatured);
+    console.log(featuredArticle);
     return (
         <div className="featured-articles d-flex">
             {
-                props.articles.length > 0 ? (
+                featuredArticle.length > 0 ? (
                     <div className="row h-100">
                         <div className="col-4 h-100">
-                            {props.articles.map((article, i) => {
+                            {featuredArticle.map((article, i) => {
                                 return i > 0 ? (
                                     <FeaturedArticlesListItems key={article.id} i={i} {...article} />
                                 ) : (null);
@@ -18,7 +18,6 @@ export function FeaturedArticlesList(props) {
                         </div>
                         <div className="col-8 h-100">
                             {props.articles.map((article, i) => {
-                                console.log(i);
                                 return i === 0 ? (
                                     <FeaturedArticlesListItems key={article.id} i={i} {...article} />
                                 ) : (null);
@@ -31,10 +30,4 @@ export function FeaturedArticlesList(props) {
     );
 };
 
-const mapStateToProps = (state) => {
-    return {
-        articles: getArticles(state.articles)
-    };
-};
-
-export default connect(mapStateToProps)(FeaturedArticlesList);
+export default FeaturedArticlesList;

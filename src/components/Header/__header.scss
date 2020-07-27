@@ -1,0 +1,39 @@
+header {
+    textarea:hover,
+    input:hover,
+    textarea:active,
+    input:active,
+    textarea:focus,
+    input:focus,
+    button:focus,
+    button:active,
+    button:hover,
+    label:focus,
+    .btn:active,
+    .btn.active {
+        outline: 0px !important;
+        -webkit-appearance: none;
+        box-shadow: none !important;
+    }
+    .navbar {
+        .bg-nav {
+            background: #fdfdfd;
+        }
+        height: 150px;
+        .navbar-nav {
+            a {
+                font-family: "Heebo", sans-serif !important;
+                font-weight: 400;
+                margin-left: 1em;
+                margin-right: 1em;
+            }
+        }
+        .search-bar {
+            background: inherit;
+            border-style: none;
+            border-radius: 0;
+        }
+    }
+    
+}
+

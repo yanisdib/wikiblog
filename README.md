@@ -15,7 +15,8 @@
 ## **Incoming improvements and features**
 
 #### Refactor code to integrate usage of hooks
-#### Improve comment features (e.g. displaying new comments without hard refresh)
+#### Updates of responsive design
+#### Improve comment features (e.g. displaying new comments without hard refresh) - DONE!
 #### Integration of a rich text editor for articles and comments
 #### Integration of user's own personal picture gallery
 #### Integration of user roles

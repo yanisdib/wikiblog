@@ -95,7 +95,7 @@ export const getArticles = (articles) => ({
  * calling the function getArticles.
  */
 export const startGetArticles = () => {
-    return (dispatch, getState) => {
+    return (dispatch) => {
         return database.ref('articles')
             .orderByChild('createdAt')
             .once('value').then((snapshot) => {
@@ -109,7 +109,6 @@ export const startGetArticles = () => {
                 });
 
                 dispatch(getArticles(articles));
-                console.log(articles);
             });
     };
 };

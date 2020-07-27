@@ -2,7 +2,8 @@ import React from 'react';
 import moment from 'moment';
 import { v1 as uuidv1 } from 'uuid';
 import { storage } from '../../../../../firebase/firebase';
-import ImagesUploader from '../../../../Utils/ImagesUploader';
+import ImagesUploader from '../../../../ImagesUploader/ImagesUploader';
+import PropTypes from 'prop-types';
 
 export class ArticleForm extends React.Component {
     constructor(props) {
@@ -20,7 +21,6 @@ export class ArticleForm extends React.Component {
             createdAt: props.article ? moment(props.article.createdAt) : moment()
         };
     };
-
 
     onTitleChange = (e) => {
         const title = e.target.value;
@@ -199,6 +199,19 @@ export class ArticleForm extends React.Component {
             </div>
         );
     };
+};
+
+ArticleForm.propTypes = {
+    title: PropTypes.string,
+    subtitle: PropTypes.string,
+    category: PropTypes.string,
+    description: PropTypes.string,
+    imageFile: PropTypes.array,
+    imageUrl: PropTypes.string,
+    isFeatured: PropTypes.bool,
+    uploadStatus: PropTypes.string,
+    permalink: PropTypes.string,
+    createdAt: PropTypes.number
 };
 
 export default ArticleForm;

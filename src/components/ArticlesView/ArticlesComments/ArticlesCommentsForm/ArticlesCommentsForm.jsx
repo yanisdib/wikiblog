@@ -8,7 +8,8 @@ export default class ArticlesCommentsForm extends React.Component {
             username: props.comment ? props.comment.username : '',
             title: props.comment ? props.comment.title : '',
             body: props.comment ? props.comment.body : '',
-            createdAt: props.comment ? moment(props.comment.createdAt) : moment()
+            createdAt: props.comment ? moment(props.comment.createdAt) : moment(),
+            error: ''
         };
     };
 

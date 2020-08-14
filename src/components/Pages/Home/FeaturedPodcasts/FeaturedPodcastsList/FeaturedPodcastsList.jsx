@@ -7,7 +7,7 @@ function FeaturedPodcastsList({ articles }) {
     return (
         featuredPodcasts.length > 0 ? (
             <div id="ft-podcast">
-                <div className="row mt-4 mb-4">
+                <div className="row mt-5 mb-5">
                     {
                         featuredPodcasts.map((featuredPodcast) => {
                             return (

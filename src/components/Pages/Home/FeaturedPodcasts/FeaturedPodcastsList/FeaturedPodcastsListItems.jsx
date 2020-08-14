@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function FeaturedPodcastsListItems({ title, imageUrl, permalink }) {
+function FeaturedPodcastsListItems({ title, subtitle, imageUrl, permalink }) {
     console.log(title);
     const backgroundStyle = {
         backgroundImage: `url(${imageUrl})`,
@@ -11,9 +11,9 @@ function FeaturedPodcastsListItems({ title, imageUrl, permalink }) {
     };
     return (
         <div className="col-3 preview-ft-podcast">
-            <div className="row">
+            <div className="row h-100">
                 <div
-                    className="col-3 ft-podcast-img"
+                    className="col-3 h-100 ft-podcast-img"
                     style={backgroundStyle}
                 >
                 </div>
@@ -21,6 +21,9 @@ function FeaturedPodcastsListItems({ title, imageUrl, permalink }) {
                     <Link to={`/view/${permalink}`}>
                         <h6 className="fw-500 ft-podcast-title">
                             {title}
+                        </h6>
+                        <h6 className="fw-300 ft-podcast-title">
+                            {`${subtitle.substring(0, 50)}...`}
                         </h6>
                     </Link>
                 </div>

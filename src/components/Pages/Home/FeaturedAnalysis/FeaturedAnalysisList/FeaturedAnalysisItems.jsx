@@ -10,7 +10,7 @@ function FeaturedAnalysisItems({ category, title, subtitle, description, permali
     };
 
     switch (i) {
-        case 0:
+        case 2:
             return (
                 <div className={`col-6 h-100 featured-analysis-item-${i} item-${i}`} style={backgroundStyle}>
                     <div className="row h-25 p-5">
@@ -43,7 +43,7 @@ function FeaturedAnalysisItems({ category, title, subtitle, description, permali
                     </Link>
                 </div>
             )
-        case 2:
+        case 0:
             return (
                 <div className={`col-3 h-100 featured-analysis-item-${i} item-${i}`} style={backgroundStyle}>
                     <Link to={`/view/${permalink}`}>

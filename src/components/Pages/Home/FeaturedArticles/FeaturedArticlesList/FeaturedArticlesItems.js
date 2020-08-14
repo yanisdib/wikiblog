@@ -19,7 +19,7 @@ function FeaturedArticlesListItems({ i, title, subtitle, category, isFeatured, i
                             style={backgroundStyle}
                         >
                             <div className="col-12 h-100">
-                                <p className="fw-500">Chronique</p>
+                                <p className="fw-500">{category}</p>
                                 <Link to={`/view/${permalink}`}>
                                     <h4 className="fw-400">{title}</h4>
                                     <h3 className="fw-600">
@@ -33,7 +33,7 @@ function FeaturedArticlesListItems({ i, title, subtitle, category, isFeatured, i
                     return (
                         <div className="row h-50 mb-2 pb-2">
                             <div className="col-12 d-flex align-items-end" style={backgroundStyle}>
-                                <div className="row h-50">
+                                <div className="row h-50 mb-4">
                                     <div className="col-1"></div>
                                     <div className={`featured-article-item-${i} col-11`}>
                                         <p className="fw-500">{category}</p>
@@ -50,7 +50,7 @@ function FeaturedArticlesListItems({ i, title, subtitle, category, isFeatured, i
                     return (
                         <div className="row h-50 mt-2 pb-2">
                             <div className="col-12 d-flex align-items-end" style={backgroundStyle}>
-                                <div className="row h-50">
+                                <div className="row h-50 mb-4">
                                     <div className="col-1"></div>
                                     <div className={`featured-article-item-${i} col-11`}>
                                         <p className="fw-500">{category}</p>

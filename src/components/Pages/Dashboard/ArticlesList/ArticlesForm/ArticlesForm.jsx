@@ -1,6 +1,5 @@
 import React from 'react';
 import moment from 'moment';
-import { v1 as uuidv1 } from 'uuid';
 import { storage } from '../../../../../firebase/firebase';
 import ImagesUploader from '../../../../ImagesUploader/ImagesUploader';
 import PropTypes from 'prop-types';
@@ -9,6 +8,7 @@ export class ArticleForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            id: props.article ? props.article.id : '',
             title: props.article ? props.article.title : '',
             subtitle: props.article ? props.article.subtitle : '',
             category: props.article ? props.article.category : 'Chronique',
@@ -21,6 +21,7 @@ export class ArticleForm extends React.Component {
             createdAt: props.article ? moment(props.article.createdAt) : moment()
         };
     };
+
 
     onTitleChange = (e) => {
         const title = e.target.value;
@@ -97,7 +98,8 @@ export class ArticleForm extends React.Component {
             // Create a permalink based on article's title, subtitle and a uuid.
             const spaceRegex = /\s+/g;
             const puncRegex = /[.,/#!$%^&*;:{}=_`~()@+?><[\]+]/g;
-            const permalink = this.state.title.concat('-', this.state.subtitle, '-', uuidv1().substring(0, 6));
+            const id = this.state.id;
+            const permalink = this.state.title.concat('-', this.state.subtitle, '-', id.substring(id.length - 5));
             console.log(this.state.imageUrl);
             this.props.onSubmit(
                 {

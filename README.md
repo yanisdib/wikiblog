@@ -9,7 +9,7 @@
 - [x] Add, edit, remove comments to articles (Edit/remove features to be added with Google Auth)
 - [ ] Authentication with Google
 - [ ] Filter and sort contents
-- [ ] Basic articles search feature
+- [ ] Articles search feature
 
 
 ## **Incoming improvements and features**

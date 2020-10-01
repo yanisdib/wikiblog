@@ -2,16 +2,23 @@ import React from 'react';
 import { connect } from 'react-redux';
 import FeaturedArticles from './FeaturedArticles/FeaturedArticles';
 import FeaturedPodcasts from './FeaturedPodcasts/FeaturedPodcasts';
-import FeaturedAnalysis from './FeaturedAnalysis/FeaturedAnalysis';
 import getArticles from '../../../selectors/articles';
+import FeaturedSong from './FeaturedSong/FeaturedSong';
+import FeaturedArtbooks from './FeaturedArtbooks/FeaturedArtbooks';
+import FeaturedSoundtracks from './FeaturedSoundtracks/FeaturedSoundtracks';
 
 function Home(props) {
-    console.log(props.articles);
     return (
-        <div className="container mt-3 mb-3">
-            <FeaturedPodcasts articles={props.articles} />
+        <div>
             <FeaturedArticles articles={props.articles} />
-            <FeaturedAnalysis articles={props.articles} />
+            <FeaturedPodcasts articles={props.articles} />
+            <div className="container">
+                <div className="row sct-h">
+                    <FeaturedSong />
+                    <FeaturedArtbooks articles={props.articles} />
+                </div>
+            </div>
+            <FeaturedSoundtracks articles={props.articles} />
             {/* Other sections here */}
         </div>
     );

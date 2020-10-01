@@ -1,0 +1,12 @@
+.row-articles-0 {
+    height: 450px;
+    margin-bottom: 40px;
+}
+.row-articles-1 {
+    height: 450px;
+}
+@for $i from 0 to 4 {
+    .featured-articles-item-#{$i} {
+        border-radius: 10px;
+    }
+}

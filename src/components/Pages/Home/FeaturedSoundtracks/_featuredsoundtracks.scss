@@ -1,0 +1,24 @@
+#featured-soundtracks {
+    height: 600px;
+    background: #ffe777;
+    background-image: url('/media/images/ost_bg_1140x734px.jpg');
+    background-position: center;
+    border-radius: 10px;
+
+    h2 {
+        color: #1530c3;
+        font-family: "Manrope";
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    h5 {
+        color: #ff7741;
+        font-family: "Manrope";
+        font-weight: 500;
+    }
+    .preview-featured-soundtracks {
+        .featured-soundtracks-items {
+            border-radius: 15px;
+        }
+    }
+}

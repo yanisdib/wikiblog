@@ -1,33 +1,47 @@
 import React from 'react';
-import FeaturedArticlesListItems from './FeaturedArticlesItems';
+import FeaturedArticlesListItems from './FeaturedArticlesListItems';
 
 export function FeaturedArticlesList(props) {
-    const featuredArticle = props.articles.filter(article => article.category !== 'Podcast' && article.isFeatured);
-    console.log(featuredArticle);
-    return (
-        <div className="featured-articles d-flex">
-            {
-                featuredArticle.length > 0 ? (
-                    <div className="row h-100">
-                        <div className="col-4 h-100">
-                            {featuredArticle.map((article, i) => {
-                                return i > 0 ? (
-                                    <FeaturedArticlesListItems key={article.id} i={i} {...article} />
-                                ) : (null);
-                            })}
-                        </div>
-                        <div className="col-8 h-100">
-                            {props.articles.map((article, i) => {
-                                return i === 0 ? (
-                                    <FeaturedArticlesListItems key={article.id} i={i} {...article} />
-                                ) : (null);
-                            })}
-                        </div>
-                    </div>
-                ) : (<p>No articles...</p>)
+    const featuredArticles = props.articles.filter(articles => articles.category !== 'Podcast' && articles.isFeatured);
+    const renderFeaturedArticles = (featuredArticles) => {
+        let row = [];
+        let j = 0;
+        for (let i = 0; i <= 1; i++) {
+            let column = [];
+            if (i === 0) {
+                column.push(
+                    <FeaturedArticlesListItems
+                        key={featuredArticles[j].id}
+                        index={j}
+                        {...featuredArticles[j]}
+                    />
+                );
+                j++;
             }
-        </div>
-    );
-};
+            else {
+                for (j; j < 4; j++) {
+                    column.push(
+                        <FeaturedArticlesListItems
+                            key={featuredArticles[j].id}
+                            index={j}
+                            {...featuredArticles[j]}
+                        />
+                    );
+                };
+            };
+            row.push(
+                <div className="container">
+                    <div className={`row row-articles-${i}`}>
+                        {column}
+                    </div>
+                </div>
+            );
+        };
+        return row;
+    };
+    return (
+        renderFeaturedArticles(featuredArticles)
+    )
+}
 
 export default FeaturedArticlesList;

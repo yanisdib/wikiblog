@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function FeaturedPodcastsListItems({ title, subtitle, imageUrl, permalink }) {
-    console.log(title);
     const backgroundStyle = {
         backgroundImage: `url(${imageUrl})`,
         backgroundPosition: 'center',
@@ -10,25 +9,14 @@ function FeaturedPodcastsListItems({ title, subtitle, imageUrl, permalink }) {
         backgroundRepeat: 'no-repeat'
     };
     return (
-        <div className="col-3 preview-ft-podcast">
-            <div className="row h-100">
-                <div
-                    className="col-3 h-100 ft-podcast-img"
-                    style={backgroundStyle}
-                >
+        <div className="preview-featured-podcasts col-3 pl-3 pr-3">
+            <Link to={`/view/${permalink}`}>
+                <div className="featured-podcasts-items h-70" style={backgroundStyle}>
+                    {/* <img src="" alt="play-podcast" title="Lancer le podcast" /> */}
                 </div>
-                <div className="col-8 ft-podcast-title">
-                    <Link to={`/view/${permalink}`}>
-                        <h6 className="fw-500 ft-podcast-title">
-                            {title}
-                        </h6>
-                        <h6 className="fw-300 ft-podcast-title">
-                            {`${subtitle.substring(0, 50)}...`}
-                        </h6>
-                    </Link>
-                </div>
-            </div>
-        </div>)
-}
+            </Link>
+        </div>
+    );
+};
 
 export default FeaturedPodcastsListItems;

@@ -3,7 +3,7 @@ import FeaturedArticlesList from './FeaturedArticlesList/FeaturedArticlesList';
 
 function Articles(props) {
     return (
-            <FeaturedArticlesList articles={props.articles} />
+        <FeaturedArticlesList articles={props.articles} />
     );
 };
 

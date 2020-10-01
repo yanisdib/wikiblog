@@ -5,19 +5,19 @@ function FeaturedPodcastsList({ articles }) {
     const featuredPodcasts = articles.filter(article => article.category === 'Podcast' && article.isFeatured);
     console.log(featuredPodcasts);
     return (
-        featuredPodcasts.length > 0 ? (
-            <div id="ft-podcast">
-                <div className="row mt-5 mb-5">
-                    {
-                        featuredPodcasts.map((featuredPodcast) => {
-                            return (
-                                <FeaturedPodcastsListItems key={featuredPodcast.id} {...featuredPodcast} />
-                            );
-                        })
-                    }
-                </div>
-            </div>
-        ) : (<div></div>)
+        <div className="featured-podcasts-list row h-60 m-1">
+            {
+                featuredPodcasts.length > 0 ? (
+                    featuredPodcasts.map((featuredPodcast) => {
+                        return (
+                            <FeaturedPodcastsListItems key={featuredPodcast.id} {...featuredPodcast} />
+                        );
+                    })
+                ) : (
+                        <div>No podcasts available...</div>
+                    )
+            }
+        </div>
     );
 };
 

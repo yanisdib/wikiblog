@@ -1,10 +1,21 @@
 .featured-sotw {
-    background-color: #56d2ff;
+    background-color: #1ed460;
+    background-image: url("/media/images/ffx_sotw_600x600.jpg");
     border-radius: 10px;
     h2 {
-        color: #f2ff24;
+        color: #ffffff;
         font-family: "Manrope";
         text-transform: uppercase;
         letter-spacing: 1px;
+        word-break: break-word;
     }
+    .song-img {
+        display: flex;
+        justify-content: center; /* align horizontal */
+        align-items: center; /* align vertical */
+    }
+}
+.col-4-c {
+    flex: 0 0 38.33333% !important;
+    max-width: 38.33333% !important;
 }

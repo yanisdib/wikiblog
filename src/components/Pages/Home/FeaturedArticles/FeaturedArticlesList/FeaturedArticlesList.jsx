@@ -2,46 +2,20 @@ import React from 'react';
 import FeaturedArticlesListItems from './FeaturedArticlesListItems';
 
 export function FeaturedArticlesList(props) {
-    const featuredArticles = props.articles.filter(articles => articles.category !== 'Podcast' && articles.isFeatured);
-    const renderFeaturedArticles = (featuredArticles) => {
-        let row = [];
-        let j = 0;
-        for (let i = 0; i <= 1; i++) {
-            let column = [];
-            if (i === 0) {
-                column.push(
-                    <FeaturedArticlesListItems
-                        key={featuredArticles[j].id}
-                        index={j}
-                        {...featuredArticles[j]}
-                    />
-                );
-                j++;
-            }
-            else {
-                for (j; j < 4; j++) {
-                    column.push(
-                        <FeaturedArticlesListItems
-                            key={featuredArticles[j].id}
-                            index={j}
-                            {...featuredArticles[j]}
-                        />
-                    );
-                };
-            };
-            row.push(
-                <div className="container">
-                    <div className={`row row-articles-${i}`}>
-                        {column}
-                    </div>
-                </div>
-            );
-        };
-        return row;
-    };
+    let currentCategory = props.category;
+    const featuredArticles = props.articles.filter(articles =>
+        (currentCategory === 'Tout' ? (articles.category !== 'Podcast') : (articles.category === currentCategory))
+        && articles.isFeatured
+    );
+
+    let featuredArticle = featuredArticles.slice(0, 3).map((featuredArticle, i) => {
+        return <FeaturedArticlesListItems key={featuredArticle.id} index={i} currentCategory={currentCategory} {...featuredArticle} />
+    });
+    console.log(featuredArticle);
+
     return (
-        renderFeaturedArticles(featuredArticles)
+        <div className="row justify-content-center h-75 m-0">{featuredArticle}</div>
     )
-}
+};
 
 export default FeaturedArticlesList;

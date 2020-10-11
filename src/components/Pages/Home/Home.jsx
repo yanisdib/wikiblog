@@ -11,13 +11,13 @@ function Home(props) {
     return (
         <div>
             <FeaturedArticles articles={props.articles} />
-            <FeaturedPodcasts articles={props.articles} />
             <div className="container">
                 <div className="row sct-h">
                     <FeaturedSong />
                     <FeaturedArtbooks articles={props.articles} />
                 </div>
             </div>
+            <FeaturedPodcasts articles={props.articles} />
             <FeaturedSoundtracks articles={props.articles} />
             {/* Other sections here */}
         </div>

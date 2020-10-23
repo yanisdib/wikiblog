@@ -1,14 +1,17 @@
 import React from 'react';
+import FeaturedSoundtracksList from './FeaturedSoundtracksList';
 
 function FeaturedSoundtracks({ articles }) {
+    const featuredSoundtracks = articles.filter(article => article.category === 'Soundtracks' && article.isFeatured);
     return (
         <section id="featured-soundtracks" className="container">
-            <div className="featured-soundtracks row h-100">
+            <div className="featured-soundtracks row h-100 d-flex">
                 <div className="col-12">
-                    <div className="row h-40 p-4 pt-5">
+                    <div className="row h-30 p-4 pt-5">
                         <div className="col-12">
                             <h2 className="fw-500">Original
-                            <br />Sountracks Reviews
+                            <br />
+                            Sountracks Reviews
                             </h2>
                             <h5 className="soundtracks-link">
                                 <svg width="1em" height="1em" viewBox="0 0 16 16" className="bi bi-chat-right-text mr-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -18,7 +21,7 @@ function FeaturedSoundtracks({ articles }) {
                                  Donnez votre avis dès maintenant -></h5>
                         </div>
                     </div>
-                    {/* <FeaturedPodcastsList articles={articles} /> */}
+                    <FeaturedSoundtracksList featuredSoundtracks={featuredSoundtracks} />
                 </div>
             </div>
         </section>

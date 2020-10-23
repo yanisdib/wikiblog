@@ -3,17 +3,23 @@ import FeaturedArticlesCategoriesList from './FeaturedArticlesCategoriesList';
 import FeaturedArticlesList from './FeaturedArticlesList/FeaturedArticlesList';
 
 function FeaturedArticles(props) {
-    const rowStyle= {
+    const rowStyle = {
         margin: "auto"
     }
     const [selectedCategory, setSelectedCategory] = useState('Tout');
-    let categories = props.articles.map(article => { return article.category });
+    const categoryOptions = ['Analyse', 'Chronique', 'Interview', 'Actualité'];
+    let categories = props.articles.filter(article => categoryOptions.includes(article.category))
+        .map(article => {
+            return article.category
+        });
+
+
+    /** Set a an array of unique values from the array categories */
     let uniqueCategories = [...new Set(categories)];
     const onCategoryClick = (e) => {
         let category = e.target.innerText;
         setSelectedCategory(category);
     };
-    console.log(selectedCategory);
     return (
         <div className="container d-flex p-0 mb-5">
             <div className="featured-articles w-100 d-flex">

@@ -5,13 +5,18 @@
 @import "../components/Footer/_footer";
 @import "./_comments";
 @import "./_views";
+@import "../components/Userbar/userbar";
 @import "./_home";
 
 html,
 body {
     height: 100%;
+    font-family: $mainFont;
+    color: #000;
 }
-
+.container {
+    max-width: 990px !important;
+}
 section {
     margin-top: 3em;
     margin-bottom: 3em;
@@ -66,5 +71,17 @@ nav {
 
 .alt-title,
 .quote {
-    font-family: "Playfair Display", sans-serif;
+    font-family: $quoteFont;
+}
+
+.hero {
+    position: absolute;
+    background-color: #000000;
+    opacity: 0.25;
+    z-index: 1;
+}
+
+button {
+    font-family: $buttonFont;
+    font-size: 0.9em;
 }

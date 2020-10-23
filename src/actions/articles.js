@@ -14,7 +14,7 @@ export const addArticle = (article) => ({
  */
 export const startAddArticle = (articleData = {}) => {
     return (dispatch, getState) => {
-        const {
+        const { 
             title = '',
             subtitle = '',
             description = '',

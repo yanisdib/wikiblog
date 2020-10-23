@@ -174,7 +174,7 @@ export class ArticleForm extends React.Component {
                                 <option value="News">Actualité</option>
                                 <option value="Interview">Interview</option>
                                 <option value="Artbooks">Artbooks</option>
-                                <option value="Sountracks">Soundtracks</option>
+                                <option value="Soundtracks">Soundtracks</option>
                             </select>
                             <div className="form-group">
                                 <label>Publish as Featured Article: &nbsp;</label>

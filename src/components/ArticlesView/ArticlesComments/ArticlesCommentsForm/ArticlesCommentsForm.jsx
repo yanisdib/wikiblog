@@ -32,7 +32,7 @@ export default class ArticlesCommentsForm extends React.Component {
         e.preventDefault();
         if (!this.state.username || !this.state.title || !this.state.body) {
             this.setState(() => ({
-                error: 'Please provide a title and a comment'
+                error: 'Please provide a username, a title and a comment.'
             }));
             console.log(this.state.error);
         } else {
@@ -54,7 +54,7 @@ export default class ArticlesCommentsForm extends React.Component {
         return (
             <form onSubmit={this.onSubmit} id="comment-form">
                 <div className="form-group">
-                    <p className="txt-danger">{this.state.error}</p>
+                    <p className="text-danger">{this.state.error}</p>
                 </div>
                 <div className="form-group">
                     <label htmlFor="usernameInputText">Username:</label>

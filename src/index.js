@@ -9,13 +9,19 @@ import { startGetArticles } from './actions/articles';
 
 const store = configureStore();
 store.dispatch(startGetArticles()).then(() => {
-  ReactDOM.render(
-    <Provider store={store}>
-      <AppRouter />
-    </Provider>,
-    document.getElementById('root')
-  );
+  try {
+    ReactDOM.render(
+      <Provider store={store}>
+        <AppRouter />
+      </Provider>,
+      document.getElementById('root')
+    );
+  }
+  catch {
+    ReactDOM.render(<div>The app is currently not available...</div>, document.getElementById('root'));
+  }
 });
+
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

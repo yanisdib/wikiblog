@@ -20,9 +20,14 @@ function Home(props) {
             <FeaturedPodcasts articles={props.articles} />
             <FeaturedSoundtracks articles={props.articles} />
             {/* Other sections here */}
+            {/* <Userbar startLogin={startLogin()} /> */}
         </div>
     );
 };
+
+// const mapDispatchToProps = (dispatch) => ({
+//     startLogin: dispatch(startLogin())
+// });
 
 const mapStateToProps = (state) => {
     return {

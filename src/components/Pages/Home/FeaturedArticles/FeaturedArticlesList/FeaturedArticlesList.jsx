@@ -9,9 +9,8 @@ export function FeaturedArticlesList(props) {
     );
 
     let featuredArticle = featuredArticles.slice(0, 3).map((featuredArticle, i) => {
-        return <FeaturedArticlesListItems key={featuredArticle.id} index={i} currentCategory={currentCategory} {...featuredArticle} />
+        return <FeaturedArticlesListItems key={`ft-articles-${i}`} index={i} currentCategory={currentCategory} {...featuredArticle} />
     });
-    console.log(featuredArticle);
 
     return (
         <div className="row justify-content-center h-75 m-0">{featuredArticle}</div>

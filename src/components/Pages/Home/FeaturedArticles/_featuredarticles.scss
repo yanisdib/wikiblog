@@ -14,13 +14,13 @@
     .badge-light {
         width: 150px;
         background-color: transparent;
-        border: solid 1px #ffffff;
+        border: solid 2px #ffffff;
         color: #ffffff;
         font-size: 0.9em;
         font-family: "Open Sans";
         &:active, &.active, &:hover, &:focus{
             background-color: #ffffff;
-            color: #426613;
+            color: #000000;
             cursor: pointer;
         }
     }

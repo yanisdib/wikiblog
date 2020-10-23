@@ -2,7 +2,6 @@ import React from 'react';
 import FeaturedPodcastsList from './FeaturedPodcastsList/FeaturedPodcastsList';
 
 function FeaturedPodcasts({ articles }) {
-    console.log(articles)
     return (
         <section id="featured-podcasts" className="container">
             <div className="featured-podcasts row h-100">

@@ -20,9 +20,6 @@ function FeaturedArticlesListItems({ index, currentCategory, title, subtitle, ca
         }
     }
 
-
-    console.log(color());
-
     const badgeStyle = {
         backgroundColor: color()
     };
@@ -31,9 +28,9 @@ function FeaturedArticlesListItems({ index, currentCategory, title, subtitle, ca
         if (index < 3) {
             return (
                 index === 0 ? (
-                    <div className={`col-3 featured-articles-item-${index} h-80`} style={backgroundStyle}>
+                    <div className={`col-3 featured-articles-item-${index} h-75`} style={backgroundStyle}>
                         <div className="row h-100 align-items-end p-3">
-                            <div className="col-12 featured-articles-info h-40 mb-3 p-4">
+                            <div className="col-12 featured-articles-info h-50 mb-3 p-4">
                                 <span className="fw-400 cat-badge" style={badgeStyle}>{category}</span>
                                 <Link to={`/view/${permalink}`}>
                                     <h6 className="fw-500">{title}</h6>
@@ -43,9 +40,9 @@ function FeaturedArticlesListItems({ index, currentCategory, title, subtitle, ca
                         </div>
                     </div>) :
                     (
-                        <div className={`col-3 offset-1-c featured-articles-item-${index} h-80`} style={backgroundStyle}>
+                        <div className={`col-3 offset-1-c featured-articles-item-${index} h-75`} style={backgroundStyle}>
                             <div className="row h-100 align-items-end p-3">
-                                <div className="col-12 featured-articles-info mb-3 p-4">
+                                <div className="col-12 featured-articles-info h-50 mb-3 p-4">
                                     <span className="fw-400 cat-badge" style={badgeStyle}>{category}</span>
                                     <Link to={`/view/${permalink}`}>
                                         <h6 className="fw-500">{title}</h6>

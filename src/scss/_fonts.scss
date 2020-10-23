@@ -1,11 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap");
 
-html,
-body {
-    font-family: "Heebo", sans-serif !important;
-    color: #000;
-}
+$mainFont: "Heebo", sans-serif !important;
+$quoteFont: "Playfair Display", sans-serif;
+$buttonFont: "Manrope", sans-serif !important;
 
 @for $i from 1 to 9 {
     $weight: $i * 100;

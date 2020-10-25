@@ -14,16 +14,23 @@ export const login = (uid) => ({
  * Returns an asynchronous function 
  * that returns a popup to login with a Google Account
  */
-export const startLogin = (authProvider) => {
-    return () => {
+export const startLogin = (authProvider, { email, password }) => {
+    return async () => {
         switch (authProvider) {
             case 'Google':
                 return firebase.auth().signInWithPopup(googleAuthProvider);
             case 'Facebook':
                 return firebase.auth().signInWithPopup(facebookAuthProvider);
-            default: return firebase.auth().signInWithEmailAndPassword();
+            default:
+                return firebase.auth().signInWithEmailAndPassword(email, password)
+                    .catch((error) => {
+                        // Handle Errors here.
+                        const errorCode = error.code;
+                        const errorMessage = error.message;
+                        console.log(`${errorCode}: ${errorMessage}`);
+                    });
         };
-    }
+    };
 };
 
 
@@ -37,6 +44,14 @@ export const logout = () => ({
  */
 export const startLogout = () => {
     return () => {
-        return firebase.auth().signOut();
+        return firebase.auth().signOut().then(function () {
+            // Sign-out successful
+            console.log('user successfully logged out!')
+        }).catch(function (error) {
+            // An error happened
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(`${errorCode}: ${errorMessage}`);
+        });
     };
 };

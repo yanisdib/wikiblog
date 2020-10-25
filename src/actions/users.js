@@ -17,15 +17,15 @@ export const createUserWithEmailAndPassword = (user) => ({
  * user is an object containing a user IDs
  */
 export const startCreateUserWithEmailAndPassword = (userDefaultData = {}) => {
-    return async (dispatch) => {
+    return async (dispatch, getState) => {
         const {
             email = '',
             password = '',
             firstName = '',
             lastName = '',
-            createdAt = 0
         } = userDefaultData;
-        const userData = { email, password, firstName, lastName, createdAt };
+        const creationTime = getState().auth.uid.metadata.a;
+        const userData = { email, password, firstName, lastName, createdAt: creationTime };
         try {
             // Creates a new user with email and password
             // And an object with his ID
@@ -37,11 +37,12 @@ export const startCreateUserWithEmailAndPassword = (userDefaultData = {}) => {
                         // Then dispatch the function createUserWithEmailAndPassword
                         // that takes an object with new user's data
                         // and his ID from the user object returned by the method above
-                        return database.ref('users').push(userData).then((ref) => {
+                        return database.ref('users').push(userData).then(() => {
                             dispatch(createUserWithEmailAndPassword({
                                 id: user.uid,
                                 ...userData
                             }));
+                            console.log(user);
                         });
                     }
                     catch (error) {

@@ -11,11 +11,10 @@ function CreateAccount(props) {
         props.history.push('/');
         console.log(user);
     };
-    let createdAt = moment().format();
-    console.log(createdAt);
+    // let createdAt = moment().format();
     const { value: firstName, bind: bindFirstName, reset: resetFirstName } = useInput('');
     const { value: lastName, bind: bindLastName, reset: resetLastName } = useInput('');
-    const userData = { firstName, lastName, createdAt };
+    const userData = { firstName, lastName};
     const reset = { resetFirstName, resetLastName };
     return (
         <div className="row m-0">
@@ -24,6 +23,7 @@ function CreateAccount(props) {
                     onSubmit={onSubmit}
                     userData={userData}
                     reset={reset}
+                    btnText="Créer un compte"
                 >
                     <div className="form-group">
                         <label htmlFor="userInputFirstName">Prénom *</label>

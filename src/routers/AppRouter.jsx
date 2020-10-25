@@ -29,7 +29,7 @@ function AppRouter() {
                     <Route path="/dashboard/articles/edit/:id" component={EditArticle} />
                     <Route path="/dashboard/articles" component={ArticlesList} />
                     <Route path="/login" component={Login} />
-                    <Route path="/register" component={CreateAccount} />
+                    <Route path="/create-new-account" component={CreateAccount} />
                     <Route path="/404" component={NotFound} />
                 </Switch>
             </main>

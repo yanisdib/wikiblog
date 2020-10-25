@@ -29,7 +29,7 @@ is in progress. Custom hooks have been added as well to have an easier integrati
 - [x] Add, edit, remove comments to articles (Edit/remove features to be added with Google Auth)
 - [x] Authentication with Google
 - [x] Create an account with email and password (+ other data)
-- [ ] Login with email and password
+- [x] Login with email and password
 - [ ] Filter and sort contents
 - [ ] Articles search feature
 

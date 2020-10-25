@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
-function HeaderNav() {
+function HeaderNav(props) {
     return (
         <nav className="navbar navbar-expand-lg p-0">
             <div className="col-3"></div>

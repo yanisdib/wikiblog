@@ -8,6 +8,7 @@ import FeaturedArtbooks from './FeaturedArtbooks/FeaturedArtbooks';
 import FeaturedSoundtracks from './FeaturedSoundtracks/FeaturedSoundtracks';
 
 function Home(props) {
+    console.log(props.user)
     return (
         <div>
             <FeaturedArticles articles={props.articles} />
@@ -31,7 +32,8 @@ function Home(props) {
 
 const mapStateToProps = (state) => {
     return {
-        articles: getArticles(state.articles)
+        articles: getArticles(state.articles),
+        user: state.auth
     };
 };
 

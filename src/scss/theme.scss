@@ -82,6 +82,10 @@ nav {
 }
 
 button {
-    font-family: $buttonFont;
-    font-size: 0.9em;
+    font-size: 1em !important;
+    .btn {
+        background-color: #000000 !important;
+        color: #ffffff !important;
+        border: none;
+    }
 }

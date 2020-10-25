@@ -41,7 +41,7 @@ function AuthenticationForm(props) {
             };
         };
     };
-
+console.log(props.btnText);
 
     return (
         <div className="row align-items-center">
@@ -73,7 +73,7 @@ function AuthenticationForm(props) {
                     </div>
                     <small id="infoData" className="form-text text-muted text-danger">* Information obligatoire</small>
                     {props.children}
-                    <button type="submit" className="btn btn-primary">Connexion</button>
+                    <button type="submit" className="btn btn-primary">{props.btnText}</button>
                 </form>
             </div>
         </div>

@@ -36,8 +36,8 @@ is in progress. Custom hooks have been added as well to have an easier integrati
 
 ## **Incoming improvements and features**
 
-#### Refactor code to integrate usage of hooks [in progress]
-#### Updates of responsive design
+#### Refactor code to integrate usage of hooks [on progress]
+#### Improvements of responsive design [on progress]
 #### Improve comment features (e.g. displaying new comments without hard refresh) - DONE!
 #### Integration of a rich text editor for articles and comments
 #### Integration of user's own personal picture gallery
